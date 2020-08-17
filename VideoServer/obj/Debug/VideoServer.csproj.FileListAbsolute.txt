@@ -1,0 +1,7 @@
+D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\VideoServer.exe.config
+D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\VideoServer.exe
+D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\VideoServer.pdb
+D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.csprojAssemblyReference.cache
+D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.csproj.CoreCompileInputs.cache
+D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.exe
+D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.pdb
