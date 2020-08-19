@@ -31,8 +31,8 @@ namespace VideoServer
             {
                 next_char = inputStream.ReadByte();
                 if (next_char == '\n') { break; }
-                if (next_char == '\n') { continue; }
-                if(next_char == -1) { Thread.Sleep(1);continue };
+                if (next_char == '\r') { continue; }
+                if(next_char == -1) { Thread.Sleep(1);continue; };
                 data += Convert.ToChar(next_char);
             }
             return data;
@@ -79,13 +79,13 @@ namespace VideoServer
 
         private void readHeader()
         {
-            Console.WriteLine("Read header");
+            Console.WriteLine("Read header from client");
             String line;
             while((line = streamReadLine(inputStream)) != null)
             {
                 if (line.Equals(""))
                 {
-                    Console.WriteLine("got headers");
+                    Console.WriteLine("completed reading headers");
                     return;
                 }
                 int separator = line.IndexOf(':');
@@ -103,6 +103,14 @@ namespace VideoServer
                 Console.WriteLine("header:{0}:{1}", name, value);
                 httpHeaders[name] = value;
             }
+        }
+
+        internal void writeSuccess(string content_type = "text/html")
+        {
+            outputStream.WriteLine("HTTP/1.0 200 OK");
+            outputStream.WriteLine("Content-Type: " + content_type);
+            outputStream.WriteLine("Connection: close");
+            outputStream.WriteLine("");
         }
 
         private void parseRequest() // Định dạng của request sau khi đc parse GET /myurl HTTP/1.0
