@@ -18,7 +18,7 @@ namespace VideoServer
             if (p.http_url.Contains(".mp4"))
             {
                 string a = p.http_url.Substring(1, p.http_url.Length - 1);
-                string link = @"C:\Users\Admin\Downloads\" + a;
+                string link = ".\\videos\\" + a;
                 using (FileStream fs = new FileStream(link, FileMode.Open))
                 {
                     int startByte = -1;
