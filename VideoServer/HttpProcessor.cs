@@ -53,11 +53,15 @@ namespace VideoServer
                 {
                     handlePOSTREQUEST();
                 }
-            }catch(Exception e)
+                outputStream.Flush();
+            }
+            catch(Exception e)
             {
                 Console.WriteLine("Exception: " + e.ToString());
                 writeFailure();
             }
+            inputStream = null; outputStream = null;   //sau khi xử lý xong phải trả về input steam và outputstream bằng rỗng, nếu không thì các dữ liệu trên đó vẫn lặp        
+            s.Close();  //sau khi làm xong phải đóng socket TCP, nếu không bên phía client vẫn sẽ tưởng là còn file và liên tục đợi cho tới khi timeout 
         }
 
         private void writeFailure()

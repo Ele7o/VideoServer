@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -57,7 +58,7 @@ namespace VideoServer
                 }
 
             }
-            if (p.http_url.Contains(".png"))
+            else if (p.http_url.Contains(".png"))
             {
                 string a = p.http_url.Substring(1, p.http_url.Length - 1);
                 string link = @"C:\Users\Admin\Downloads\" + a;
@@ -70,16 +71,16 @@ namespace VideoServer
                     int read = fs.Read(buffer, 0, endByte);
                     fs.Flush();
                     fs.Close();
-                    p.outputStream.AutoFlush = true;
+                   
                     p.outputStream.WriteLine("HTTP/1.0 206 Partial Content");
                     p.outputStream.WriteLine("Content-Type: image.ong");
                     p.outputStream.WriteLine("Accept-Ranges: bytes");
                     p.outputStream.WriteLine("Content-Length: " + buffer.Length.ToString());
                     p.outputStream.WriteLine("Connection: keep-alive");
                     p.outputStream.WriteLine("");
-                    p.outputStream.AutoFlush = false;
+                   
                     p.outputStream.BaseStream.Write(buffer, 0, buffer.Length);
-                    p.outputStream.Flush();
+                   
                 }
 
             }
@@ -87,11 +88,13 @@ namespace VideoServer
             {
                 Console.WriteLine("request: {0}", p.http_url);
                 p.writeSuccess();
-                p.outputStream.WriteLine("<html><body><h1>Em yêu Lee Shang</h1>");
+                VideoDAO a = new VideoDAO();
+                p.outputStream.WriteLine(a.ListVideos());
                 p.outputStream.Flush();
             }
-            Console.WriteLine("request: {0}", p.http_url);
-            p.writeSuccess();
+           
+
+
         }
 
         public override void handlePOSTRequest(HttpProcessor p, StreamReader inputData)

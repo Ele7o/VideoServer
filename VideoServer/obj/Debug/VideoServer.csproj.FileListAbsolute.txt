@@ -1,7 +1,11 @@
 D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\VideoServer.exe.config
 D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\VideoServer.exe
 D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\VideoServer.pdb
+D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\Json.Net.dll
+D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\Newtonsoft.Json.dll
+D:\videoProject\VideoServer\VideoServer\VideoServer\bin\Debug\Newtonsoft.Json.xml
+D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.csprojAssemblyReference.cache
 D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.csproj.CoreCompileInputs.cache
+D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.csproj.CopyComplete
 D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.exe
 D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.pdb
-D:\videoProject\VideoServer\VideoServer\VideoServer\obj\Debug\VideoServer.csprojAssemblyReference.cache
